@@ -1,0 +1,68 @@
+<!-- checkout.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout - Jensen Decors</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<h2>Jensen Decors</h2>
+</div>
+
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="categories.html">Categories</a></li>
+<li><a href="product.html">Products</a></li>
+<li><a href="cart.html">Cart</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+
+<section class="cart-box">
+
+<h1>Checkout</h1>
+<p>Complete your order details below</p>
+
+<form id="checkoutForm">
+
+<input type="text" id="fullName" placeholder="Full Name" required><br><br>
+
+<input type="text" id="address" placeholder="Full Address" required><br><br>
+
+<input type="text" id="phone" placeholder="Phone Number" required><br><br>
+
+<select id="paymentMethod" required>
+<option value="">Select Payment Method</option>
+<option value="COD">Cash on Delivery</option>
+<option value="Card">Debit / Credit Card</option>
+<option value="JazzCash">JazzCash</option>
+<option value="EasyPaisa">EasyPaisa</option>
+</select><br><br>
+
+<button type="submit">Place Order</button>
+
+</form>
+
+</section>
+
+</main>
+
+<footer>
+<p>© 2026 Jensen Decors. All rights reserved.</p>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
