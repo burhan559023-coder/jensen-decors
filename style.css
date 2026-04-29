@@ -1,0 +1,485 @@
+
+:root {
+    --gold: #D4AF37;
+    --dark-gold: #996515;
+    --black: #0a0a0a;
+    --card-bg: #161616;
+    --white: #ffffff;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+/* --- Navigation & Header --- */
+header {
+    background: rgba(10, 10, 10, 0.95);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--gold);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.logo img {
+    height: 50px;
+    filter: drop-shadow(0 0 5px var(--gold));
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    padding-bottom: 5px;
+    transition: var(--transition);
+}
+
+/* Before Effect on Nav Links */
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: var(--transition);
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: var(--gold);
+}
+
+/* --- Professional Dropdown --- */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--card-bg);
+    border: 1px solid var(--gold);
+    min-width: 200px;
+    display: none;
+    padding: 10px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    border-radius: 4px;
+}
+
+.dropdown-menu li {
+    display: block;
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+    text-transform: capitalize;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Card Styling (For All Pages) --- */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 5%;
+}
+
+/* Common Card Style for Divs */
+.card, main > div {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    padding: 20px;
+    width: 300px; /* Normal size */
+    text-align: center;
+    border-radius: 12px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.card:hover, main > div:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+}
+
+/* Images Size Normalization */
+.card img, main > div img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #222;
+    transition: var(--transition);
+}
+
+.card:hover img, main > div:hover img {
+    filter: brightness(1.1);
+}
+
+h1, h2, h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Buttons with Shine Effect --- */
+button {
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    overflow: hidden;
+    position: relative;
+    transition: var(--transition);
+    z-index: 1;
+    margin-top: 10px;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: var(--gold);
+    transition: var(--transition);
+    z-index: -1;
+}
+
+button:hover {
+    color: var(--black);
+}
+
+button:hover::after {
+    width: 100%;
+}
+
+/* --- Hero Banner Size --- */
+#hero img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-bottom: 4px solid var(--gold);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #050505;
+    border-top: 1px solid var(--gold);
+    margin-top: 50px;
+    font-size: 14px;
+    color: #888;
+}
+
+/* Tables Styling */
+table {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: var(--card-bg);
+}
+
+th {
+    background: var(--gold);
+    color: var(--black);
+    padding: 15px;
+}
+
+td {
+    padding: 12px;
+    border: 1px solid #333;
+    text-align: center;
+}
+/* checkout page css */
+
+.cart-box{
+max-width:700px;
+margin:50px auto;
+padding:40px;
+background:#161616;
+border:1px solid #d4af37;
+border-radius:12px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.cart-box h1{
+color:#d4af37;
+margin-bottom:10px;
+font-size:34px;
+}
+
+.cart-box p{
+color:#ccc;
+margin-bottom:30px;
+}
+
+#checkoutForm input,
+#checkoutForm select{
+width:100%;
+max-width:500px;
+padding:14px;
+margin:10px 0;
+background:#0a0a0a;
+border:1px solid #333;
+color:#fff;
+border-radius:6px;
+font-size:16px;
+outline:none;
+transition:0.3s;
+}
+
+#checkoutForm input:focus,
+#checkoutForm select:focus{
+border-color:#d4af37;
+box-shadow:0 0 8px rgba(212,175,55,0.3);
+}
+
+#checkoutForm button{
+margin-top:20px;
+padding:14px 28px;
+border:2px solid #d4af37;
+background:transparent;
+color:#d4af37;
+font-weight:bold;
+cursor:pointer;
+border-radius:6px;
+transition:0.3s;
+font-size:16px;
+}
+
+#checkoutForm button:hover{
+background:#d4af37;
+color:#000;
+}
+
+@media(max-width:768px){
+
+.cart-box{
+padding:25px;
+margin:20px;
+}
+
+.cart-box h1{
+font-size:28px;
+}
+
+#checkoutForm input,
+#checkoutForm select{
+font-size:15px;
+padding:12px;
+}
+
+#checkoutForm button{
+width:100%;
+}
+
+}
+.filter-box{
+text-align:center;
+margin:30px 0;
+}
+
+#brandFilter{
+padding:12px 20px;
+background:#161616;
+color:#fff;
+border:1px solid #d4af37;
+border-radius:6px;
+font-size:16px;
+}
+.filter-box{
+text-align:center;
+margin:30px 0;
+width:100%;
+display:block;
+clear:both;
+}
+
+.product-list{
+width:100%;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+margin-top:30px;
+clear:both;
+}
+
+.product-list h2{
+width:100%;
+text-align:center;
+margin-bottom:20px;
+}
+
+.product-list .card{
+width:260px;
+display:block;
+}
+/* CONTACT PAGE PREMIUM CSS */
+
+#contact-info,
+#contact-form{
+max-width:900px;
+margin:40px auto;
+padding:35px;
+background:#111;
+border:1px solid #d4af37;
+border-radius:18px;
+box-shadow:0 0 18px rgba(212,175,55,0.18);
+color:#fff;
+}
+
+#contact-info h2,
+#contact-form h3{
+text-align:center;
+font-size:30px;
+margin-bottom:25px;
+color:#d4af37;
+letter-spacing:1px;
+}
+
+#contact-info p{
+font-size:17px;
+margin:14px 0;
+line-height:1.8;
+}
+
+#contact-info a{
+color:#d4af37;
+text-decoration:none;
+font-weight:bold;
+}
+
+#contact-info a:hover{
+text-decoration:underline;
+}
+
+#contact-info iframe{
+margin-top:25px;
+border-radius:14px;
+overflow:hidden;
+box-shadow:0 0 12px rgba(255,255,255,0.08);
+}
+
+#contact-form form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+#contact-form label{
+font-weight:600;
+font-size:16px;
+color:#f5f5f5;
+}
+
+#contact-form input,
+#contact-form select,
+#contact-form textarea{
+width:100%;
+padding:14px;
+background:#1b1b1b;
+border:1px solid #444;
+border-radius:10px;
+color:#fff;
+font-size:16px;
+outline:none;
+transition:0.3s;
+box-sizing:border-box;
+}
+
+#contact-form input:focus,
+#contact-form select:focus,
+#contact-form textarea:focus{
+border-color:#d4af37;
+box-shadow:0 0 10px rgba(212,175,55,0.25);
+}
+
+#contact-form textarea{
+resize:vertical;
+min-height:140px;
+}
+
+#contact-form button{
+padding:15px;
+background:#d4af37;
+color:#000;
+font-size:17px;
+font-weight:bold;
+border:none;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+#contact-form button:hover{
+background:#f0cd57;
+transform:translateY(-2px);
+box-shadow:0 8px 18px rgba(212,175,55,0.25);
+}
+
+@media(max-width:768px){
+
+#contact-info,
+#contact-form{
+margin:20px;
+padding:22px;
+}
+
+#contact-info h2,
+#contact-form h3{
+font-size:24px;
+}
+
+}
